@@ -14,5 +14,4 @@ jobs:
     - name: Run builder script
       env:
        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-       REPO_SLUG: ${{}}/glib2.0
       run: sh ./build.sh
