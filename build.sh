@@ -24,3 +24,7 @@ sudo ninja -C _build install | grep ^"Installing" | awk '{print "cp -v --parents
 
 tar -cvzf glib-2.0.tar.gz build_environment/*
 mv glib-2.0.tar.gz $GITHUB_WORKSPACE/
+
+wget "https://raw.githubusercontent.com/probonopd/uploadtool/master/upload.sh"
+
+bash upload.sh $GITHUB_WORKSPACE/glib-2.0.tar.gz
