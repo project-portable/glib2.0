@@ -9,8 +9,8 @@ sudo python3 -m pip install meson ninja
 
 wget -q "https://download.gnome.org/sources/glib/2.64/glib-2.64.1.tar.xz"
 
-tar -xJf  glib-2.59.3.tar.xz
-cd glib-2.59.3
+tar -xJf  glib-2.64.1.tar.xz
+cd glib-2.64.1
 
 # Build
 
