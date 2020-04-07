@@ -12,11 +12,12 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Run builder script
+      env:
+       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: sh ./build.sh
     - name: Upload Release
       uses: yakuhzi/action-release@v1
       with:
        file: glib-2.0.tar.gz
-      env:
-       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
 
