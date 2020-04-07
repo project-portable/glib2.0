@@ -1,4 +1,23 @@
 
+
+
+
+bash ./quick-deploy
+
+
+
+
+
+exit 0
+
+
+
+
+
+
+
+
+
 echo $GITHUB_REF
 
 # Install build dependencies
