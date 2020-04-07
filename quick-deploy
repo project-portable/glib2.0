@@ -38,7 +38,7 @@ export REPO_SLUG="${_slug}"
   _dependencies_apt+=("python3-pip")
   _dependencies_apt+=("python3-setuptools")
   _dependencies_pip3+=("meson")
-  _steps_build=+("meson _build")
+  _steps_build+=("meson _build")
 }
 
 [ "${_build_make}" = "ninja" ] && {
