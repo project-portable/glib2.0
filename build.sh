@@ -1,4 +1,6 @@
 
+echo $GITHUB_REF
+
 # Install build dependencies
 
 sudo apt install python3-pip python3-setuptools dbus debhelper desktop-file-utils dh-exec dh-python docbook-xml docbook-xsl dpkg-dev gettext gtk-doc-tools libdbus-1-dev libelf-dev libffi-dev libmount-dev libpcre3-dev libselinux1-dev libxml2-utils linux-libc-dev pkg-config python3 python3-dbus python3-gi shared-mime-info tzdata xsltproc xterm zlib1g-dev
@@ -27,4 +29,5 @@ mv glib-2.0.tar.gz $GITHUB_WORKSPACE/
 
 wget "https://raw.githubusercontent.com/probonopd/uploadtool/master/upload.sh"
 
+export REPO_SLUG="project-portable/glib2.0"
 bash upload.sh $GITHUB_WORKSPACE/glib-2.0.tar.gz
