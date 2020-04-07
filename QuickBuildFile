@@ -41,6 +41,7 @@ dependencies:
 steps:
   before:
     - tar -xJf  glib-2.64.1.tar.xz
+    - mv glib-2.64.1/* .
   extra:
     - echo oi
   after:
