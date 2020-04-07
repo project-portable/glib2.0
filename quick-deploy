@@ -44,7 +44,7 @@ export REPO_SLUG="${_slug}"
   _dependencies_apt+=("python3-pip")
   _dependencies_apt+=("python3-setuptools")
   _dependencies_pip3+=("ninja")
-  _steps_build+=("ninja -C _build")
+  _steps_compile+=("ninja -C _build")
   _steps_install+=("sudo ninja -C _build install")
 }
 
@@ -66,6 +66,14 @@ for step in "${_steps_before[@]}"; do
 done
 
 for step in "${_steps_build[@]}"; do
+  ${step}
+done
+
+for step in "${_steps_compile[@]}"; do
+  ${step}
+done
+
+for step in "${_steps_install[@]}"; do
   ${step}
 done
 
