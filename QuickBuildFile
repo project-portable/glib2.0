@@ -1,48 +1,41 @@
-name: glib-2.0
-slug: project-portable/glib2.0
+name: pango1.0
+slug: project-portable/pango1.0
 
 build:
   configure: meson
   make: ninja
 
 dependencies:
+  quickbuild:
+    - https://github.com/project-portable/glib2.0/releases/download/continuous/glib-2.0.tar.gz
   apt:
-    - dbus
-    - debhelper
-    - desktop-file-utils
-    - dh-exec
-    - dh-python
-    - docbook-xml
-    - docbook-xsl
-    - dpkg-dev
-    - gettext
+    - fonts-cantarell
+    - gnome-pkg-tools
+    - gobject-introspection
     - gtk-doc-tools
-    - libdbus-1-dev
-    - libelf-dev
-    - libffi-dev
-    - libmount-dev
-    - libpcre3-dev
-    - libselinux1-dev
-    - libxml2-utils
-    - linux-libc-dev
-    - pkg-config
-    - python3
-    - python3-dbus
-    - python3-gi
-    - shared-mime-info
-    - tzdata
-    - xsltproc
-    - xterm
-    - zlib1g-dev
+    - help2man
+    - libcairo2-dev
+    - libfontconfig1-dev
+    - libfreetype6-dev
+    - libgirepository1.0-dev
+    - libglib2.0-dev
+    - libharfbuzz-dev
+    - libthai-dev
+    - libx11-dev
+    - libxft-dev
+    - libxrender-dev
+    - libxt-dev
+    - perl
+    - pkg-config 
   download:
-    - https://download.gnome.org/sources/glib/2.64/glib-2.64.1.tar.xz
+    - https://download.gnome.org/sources/pango/1.44/pango-1.44.7.tar.xz
     - https://raw.githubusercontent.com/probonopd/uploadtool/master/upload.sh
     
 steps:
   before:
-    - tar -xJf  glib-2.64.1.tar.xz
-    - mv glib-2.64.1/* .
+    - tar -xJf  pango-1.44.7.tar.xz
+    - mv pango-1.44.7/* .
   extra:
     - echo oi
   after:
-    - bash upload.sh glib-2.0.tar.gz
+    - bash upload.sh pango1.0.tar.gz
