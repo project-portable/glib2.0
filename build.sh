@@ -1,8 +1,10 @@
 #!/bin/bash
 
+  sudo sed 's|^# deb-src|deb-src|g' /etc/apt/sources.list
+  sudo apt update
   sudo apt build-dep gtk+2.0
 
-  wget https://ftp.gnome.org/pub/gnome/sources/gtk+/2.24/gtk+-2.24.32.tar.xz
+  wget -q https://ftp.gnome.org/pub/gnome/sources/gtk+/2.24/gtk+-2.24.32.tar.xz
   tar -xf gtk+-2.24.32.tar.xz
   cd gtk+-2.24.32/
   git cherry-pick -n 2dbf31c0ea4f17a817b931c731f8de14c278300d
