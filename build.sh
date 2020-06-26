@@ -1,6 +1,6 @@
 #!/bin/bash
 
-  sudo sed 's|^# deb-src|deb-src|g' /etc/apt/sources.list
+  sudo sed -i 's|^# deb-src|deb-src|g' /etc/apt/sources.list
   sudo apt update
   sudo apt build-dep gtk+2.0
 
