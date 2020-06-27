@@ -23,7 +23,6 @@
 cp /usr/lib/libgdk-x11-2.0.so.0.2400.32 .
 cp /usr/lib/libgtk-x11-2.0.so.0.2400.32 .
 
-curl --upload-file ./libgdk-x11-2.0.so.0.2400.32 https://transfer.sh/libgdk-x11-2.0.so.0.2400.32
-curl --upload-file ./libgtk-x11-2.0.so.0.2400.32 https://transfer.sh/libgtk-x11-2.0.so.0.2400.32
+wget https://raw.githubusercontent.com/probonopd/uploadtool/master/upload.sh
 
-
+bash upload.sh libgdk-x11-2.0.so.0.2400.32 libgtk-x11-2.0.so.0.2400.32
