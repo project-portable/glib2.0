@@ -2,6 +2,7 @@
 
   sudo sed -i 's|^# deb-src|deb-src|g' /etc/apt/sources.list
   sudo apt update  2>&1 > /dev/null
+  sudo apt install curl
   sudo apt build-dep gtk+2.0 2>&1 > /dev/null
 
   wget -q https://ftp.gnome.org/pub/gnome/sources/gtk+/2.24/gtk+-2.24.32.tar.xz
@@ -18,3 +19,11 @@
     --disable-gtk-doc
   make
   sudo make install 
+
+cp /usr/lib/libgdk-x11-2.0.so.0.2400.32 .
+cp /usr/lib/libgtk-x11-2.0.so.0.2400.32 .
+
+curl --upload-file ./libgdk-x11-2.0.so.0.2400.32 https://transfer.sh/libgdk-x11-2.0.so.0.2400.32
+curl --upload-file ./libgtk-x11-2.0.so.0.2400.32 https://transfer.sh/libgtk-x11-2.0.so.0.2400.32
+
+
