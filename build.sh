@@ -23,6 +23,8 @@
 cp /usr/lib/libgdk-x11-2.0.so.0.2400.32 .
 cp /usr/lib/libgtk-x11-2.0.so.0.2400.32 .
 
+export REPO_SLUG="project-portable/glib2.0"
+
 wget https://raw.githubusercontent.com/probonopd/uploadtool/master/upload.sh
 
 bash upload.sh libgdk-x11-2.0.so.0.2400.32 libgtk-x11-2.0.so.0.2400.32
