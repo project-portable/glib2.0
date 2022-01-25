@@ -1,5 +1,5 @@
-name: Sugerir um patch
-description: Sugira um patch para um arquivo .desktop
+name: Sugerir uma modificação em um aplicativo
+description: Sugira um modificação em um arquivo .desktop
 title: "Sugestão de ação"
 labels: ["Sugestão"]
 
