@@ -29,7 +29,7 @@ body:
     attributes:
       label: Qual o novo nome
       description: "Caso tenha escolhido 'Definir um nome manualmente' digite o nome sugerido no campo abaixo"
-      placeholder: "ls '{pesquisa}'"
+      placeholder: "Editor de textos"
     validations:
       required: false
   - type: checkboxes
