@@ -20,7 +20,7 @@ body:
       options:
         - Ocultar um aplicativo
         - Exibir um aplicativo que foi oculto
-        - Usar o nome genérico como nome
+        - Usar o nome genérico (tipo de aplicação) como nome
         - Definir um nome manualmente
     validations:
       required: true
