@@ -1,0 +1,50 @@
+name: Sugerir um patch
+description: Sugira um patch para um arquivo .desktop
+title: "Sugestão de ação"
+labels: ["Sugestão"]
+
+body:
+  - type: input
+    id: name_
+    attributes:
+      label: Qual o arquivo .desktop?
+      description: Esse nome será exibido assim que o usuário digitar o padrão
+      placeholder: "Listar arquivos"
+    validations:
+      required: true
+  - type: dropdown
+    id: version
+    attributes:
+      label: Qual o tipo de patch você está sugerindo?
+      description: Você pode escolher se sua ação vai ser abrir um URL no navegador, se será executar um comando no terminal ou se vai executar um aplicativo com interface gráfica
+      options:
+        - Ocultar um aplicativo
+        - Exibir um aplicativo oculto por engano
+        - 
+    validations:
+      required: true
+  - type: input
+    id: command_
+    attributes:
+      label: Qual comando ou site?
+      description: Nesse campo você deve digitar o comando a ser executado, o texto `{pesquisa}` será substituído pelo que o usuário digitou
+      placeholder: "ls '{pesquisa}'"
+    validations:
+      required: true
+  - type: input
+    id: pattern_
+    attributes:
+      label: Qual padrão o usuário deve digitar?
+      description: A ação será exibida assim que o usuário digitar esse padrão, note que o padrão não será passado ao comando/site/aplicativo, apenas o que o usuário digitar após o padrão será passado
+      placeholder: "|"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: "Termo de bom senso"
+      description: Você confirma que não está enviando sugestão de conteúdo racista, sexista, sexual, gore, apologia a violência, preferência política ou conteúdo sensível e/ou proíbido para menores de 18 anos?
+      options:
+        - label: Sim, não estou
+          required: true
