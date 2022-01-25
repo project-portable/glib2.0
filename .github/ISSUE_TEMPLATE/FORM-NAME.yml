@@ -7,8 +7,8 @@ body:
   - type: input
     id: name_
     attributes:
-      label: Qual o arquivo .desktop?
-      description: Esse nome será exibido assim que o usuário digitar o padrão
+      label: Qual o arquivo .desktop responsável pelo aplicativo?
+      description: Esse é o arquivo responsável por iniciar o aplicativo ele fica localizado um `/usr/share/applications/` ou em `/usr/share/tiger/xfce-config/applications/`
       placeholder: "org.kde.kwrite.desktop"
     validations:
       required: true
@@ -16,7 +16,7 @@ body:
     id: version
     attributes:
       label: Qual o tipo de patch você está sugerindo?
-      description: Você pode escolher se sua ação vai ser abrir um URL no navegador, se será executar um comando no terminal ou se vai executar um aplicativo com interface gráfica
+      description: Diga o que você quer fazer com o 
       options:
         - Ocultar um aplicativo
         - Exibir um aplicativo que foi oculto
