@@ -14,4 +14,4 @@ jobs:
     - name: Run builder script
       env:
        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: sh ./build.sh
+      run: echo sh ./build.sh
