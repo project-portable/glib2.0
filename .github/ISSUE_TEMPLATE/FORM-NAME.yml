@@ -9,7 +9,7 @@ body:
     attributes:
       label: Qual o arquivo .desktop?
       description: Esse nome será exibido assim que o usuário digitar o padrão
-      placeholder: "Listar arquivos"
+      placeholder: "org.kde.kwrite.desktop"
     validations:
       required: true
   - type: dropdown
