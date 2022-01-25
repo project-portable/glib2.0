@@ -32,15 +32,6 @@ body:
       placeholder: "ls '{pesquisa}'"
     validations:
       required: false
-  - type: input
-    id: pattern_
-    attributes:
-      label: Qual padrão o usuário deve digitar?
-      description: A ação será exibida assim que o usuário digitar esse padrão, note que o padrão não será passado ao comando/site/aplicativo, apenas o que o usuário digitar após o padrão será passado
-      placeholder: "|"
-    validations:
-      required: true
-
   - type: checkboxes
     id: terms
     attributes:
