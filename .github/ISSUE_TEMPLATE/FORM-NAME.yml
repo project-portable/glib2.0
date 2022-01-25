@@ -19,18 +19,19 @@ body:
       description: Você pode escolher se sua ação vai ser abrir um URL no navegador, se será executar um comando no terminal ou se vai executar um aplicativo com interface gráfica
       options:
         - Ocultar um aplicativo
-        - Exibir um aplicativo oculto por engano
-        - 
+        - Exibir um aplicativo que foi oculto
+        - Usar o nome genérico como nome
+        - Definir um nome manualmente
     validations:
       required: true
   - type: input
     id: command_
     attributes:
-      label: Qual comando ou site?
-      description: Nesse campo você deve digitar o comando a ser executado, o texto `{pesquisa}` será substituído pelo que o usuário digitou
+      label: Qual o novo nome
+      description: "Caso tenha escolhido 'Definir um nome manualmente' digite o nome sugerido no campo abaixo"
       placeholder: "ls '{pesquisa}'"
     validations:
-      required: true
+      required: false
   - type: input
     id: pattern_
     attributes:
