@@ -8,7 +8,7 @@ body:
     id: name_
     attributes:
       label: Qual o arquivo .desktop responsável pelo aplicativo?
-      description: Esse é o arquivo responsável por iniciar o aplicativo ele fica localizado um `/usr/share/applications/` ou em `/usr/share/tiger/xfce-config/applications/`
+      description: Esse é o arquivo responsável por iniciar o aplicativo ele fica localizado um `/usr/share/applications/` ou em `/usr/share/tiger/xfce-config/applications/` (caso escolha `Exibir um aplicativo que foi oculto`)
       placeholder: "org.kde.kwrite.desktop"
     validations:
       required: true
@@ -16,7 +16,7 @@ body:
     id: version
     attributes:
       label: Qual o tipo de patch você está sugerindo?
-      description: Diga o que você quer fazer com o 
+      description: Diga o que você quer fazer com o aplicativo
       options:
         - Ocultar um aplicativo
         - Exibir um aplicativo que foi oculto
