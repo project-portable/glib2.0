@@ -18,8 +18,8 @@ body:
       label: Qual o tipo de patch você está sugerindo?
       description: Diga o que você quer fazer com o aplicativo
       options:
-        - Ocultar um aplicativo
-        - Exibir um aplicativo que foi oculto
+        - Ocultar o aplicativo
+        - Retirar o aplicativo do painel de controle
         - Usar o nome genérico (tipo de aplicação) como nome
         - Definir um nome manualmente
     validations:
