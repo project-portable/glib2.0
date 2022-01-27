@@ -1,11 +1,19 @@
-name: Sugerir uma modificação no menu de aplicativos
-description: Sugira um modificação no arquivo .desktop de algum aplicativo
-title: "Sugestão de modificação em um aplicativo"
-labels: ["Sugestão"]
+name: Dialogo de senha
+description: Caixa de diálogo com um campo do tipo senha
+title: "senha"
+labels: ["password"]
 
 body:
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: "Configure o tipo que você quer:"
+      description: Aqui você 
+      options:
+        - label: Nova  senha
+        - label: Sim, não estou
   - type: input
-    id: desktop
+    id: _
     attributes:
       label: Qual o arquivo .desktop responsável pelo aplicativo?
       description: Esse é o arquivo responsável por iniciar o aplicativo ele fica localizado um `/usr/share/applications/` ou em `/usr/share/tiger/xfce-config/applications/` (caso escolha `Exibir um aplicativo que foi oculto`)
