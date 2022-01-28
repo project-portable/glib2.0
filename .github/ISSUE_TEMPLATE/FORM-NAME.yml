@@ -4,14 +4,7 @@ title: "senha"
 labels: ["password"]
 
 body:
-  - type: checkboxes
-    id: terms
-    attributes:
-      label: "Configure o tipo que você quer:"
-      description: Aqui você 
-      options:
-        - label: Nova  senha
-        - label: Sim, não estou
+
   - type: input
     id: _
     attributes:
@@ -23,14 +16,12 @@ body:
   - type: dropdown
     id: type
     attributes:
-      label: Qual o tipo de modificação você está sugerindo?
+      label: Onde os parametros extras devem ser adicionados?
       description: Diga o que você quer fazer com o aplicativo
       options:
-        - Ocultar o aplicativo
-        - Exibir o aplicativo
-        - Retirar o aplicativo do painel de controle
-        - Usar o nome genérico (tipo de aplicação) como nome
-        - Definir um nome manualmente
+        - Como primeiro parametro
+        - Como último parametro
+        - Antes do comando
     validations:
       required: true
   - type: input
