@@ -1,6 +1,6 @@
-name: Sugerir modificações execução do aplicativo
-description: Sugira uma modificação na forma como o aplicativo é executado
-title: "Modificação na forma que o programa é executado"
+name: Sugerir uma nova categoria para o aplicativo
+description: Sugira uma modificação que altera onde o aplicativo será exibido no menu de aplicativos
+title: "Modificação onde o aplicativo será exibido"
 labels: ["Sugestão tipo 2"]
 
 body:
@@ -16,31 +16,29 @@ body:
   - type: dropdown
     id: type
     attributes:
-      label: Onde os parametros extras devem ser adicionados?
-      description: Você pode especificar onde os parámetros devem ser adicionados, como primeiro parâmetro irá ser adicionado logo após o comando, ao final será adicionado como último parâmetro e antes como um envólucro, use essa opção somente como último recurso
+      label: Onde o aplicativo deve ser exibido?
+      description: O local representa as categorias no `Menu de aplicativos` caso escolha `Configurações` o aplicativo será enviado para o `Painel de controle`
       options:
-        - Como primeiro parametro
-        - Como último parametro
-        - Antes do comando
+        - Acessórios
+        - Configurações
+        - Desenvolvimento
+        - Escritório
+        - Gráficos
+        - Internet
+        - Multimídia
+        - Áudio
+        - Sistema
     validations:
       required: true
-  - type: input
-    id: new_name
-    attributes:
-      label: Quais os novos parametros?
-      description: "Aqui você adiciona os novos parâmentros, caso utilize o caractere `|` lembre-se de adicionar um `\\` antes ficando assim: `\\|`"
-      placeholder: "--verbose"
+      label:  Qual categoria do painel de controle?
+      description: Caso tenha escolhido `Configurações` é necessário escolher uma categoria do `Painel de Controle` caso contrário o aplicativo ficará oculto, caso queira manter na categoria `Configurações` [envie outra issue soicitando a reexibição](https://github.com/Tiger-OperatingSystem/simplifica-xfce/issues/new?assignees=&labels=Sugest%C3%A3o&template=FORM-NAME.yml&title=Reexibir+o+aplicativo&type=1)
+      options:
+        - Pessoal
+        - Hardware
+        - Sistema
+        - Outros
     validations:
-      required: true
-  - type: textarea
-    id: Justificativa
-    attributes:
-      label: Justificativa
-      description: Esse tipo de sugestão tem o potencial de abrir brechas de segurança, então precisamos saber o motivo de você sugerir isso para comparar com os resultados e poder analisar o risco x benefício
-      placeholder: "Por que quer sugerir isso?"
-      value: "Quero sugerir isso porque..."
-    validations:
-      required: true
+      required: false
   - type: checkboxes
     id: terms
     attributes:
