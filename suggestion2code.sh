@@ -54,6 +54,6 @@ script="${script}sed -i \"\${line}s|^Exec=|Exec=\${command} \${parameters}|g\" $
 
 
 
-echo -e "@daigoasuka sugestão para adicionar \`${argumentos}\` $(echo ${local} | tr  '[:upper:]' '[:lower:]') no \`${desktop}\`, esse é o código:\n\n"'```'"bash\n${script}\n"'```'  > commit.md
+echo -e "@daigoasuka sugestão para adicionar \`${argumentos}\` $(echo ${local} | tr  '[:upper:]' '[:lower:]') no lançador \`${desktop}\`, esse é o código:\n\n"'```'"bash\n${script}\n"'```'  > commit.md
 
 gh issue comment "${ISSUE_URL}" --body-file commit.md
