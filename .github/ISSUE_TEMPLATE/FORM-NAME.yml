@@ -14,7 +14,7 @@ body:
     validations:
       required: true
   - type: dropdown
-    id: type
+    id: category
     attributes:
       label: Onde o aplicativo deve ser exibido?
       description: O local representa as categorias no `Menu de aplicativos` caso escolha `Configurações` o aplicativo será enviado para o `Painel de controle`
@@ -31,7 +31,7 @@ body:
     validations:
       required: true
   - type: dropdown
-    id: type
+    id: control
     attributes:
       label:  Qual categoria do painel de controle?
       description: Caso tenha escolhido `Configurações` é necessário escolher uma categoria do `Painel de Controle` caso contrário o aplicativo ficará oculto, caso queira manter na categoria `Configurações` [envie outra issue soicitando a reexibição](https://github.com/Tiger-OperatingSystem/simplifica-xfce/issues/new?assignees=&labels=Sugest%C3%A3o&template=FORM-NAME.yml&title=Reexibir+o+aplicativo&type=1)
