@@ -29,7 +29,7 @@ body:
     attributes:
       label: Quais os novos parametros?
       description: "Aqui você adiciona os novos parâmentros, caso utilize o caractere `|` lembre-se de adicionar um `\\` antes ficando assim: `\\|`"
-      placeholder: ""
+      placeholder: "--verbose"
     validations:
       required: true
   - type: textarea
