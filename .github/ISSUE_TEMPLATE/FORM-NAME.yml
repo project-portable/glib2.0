@@ -1,7 +1,7 @@
-name: Dialogo de senha
-description: Caixa de diálogo com um campo do tipo senha
-title: "senha"
-labels: ["password"]
+name: Sugerir modificações execução do aplicativo
+description: Sugira uma modificação na forma como o aplicativo é executado
+title: "Modificação na forma que o programa é executado"
+labels: ["Sugestão tipo 2"]
 
 body:
 
