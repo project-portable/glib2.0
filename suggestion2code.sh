@@ -9,14 +9,14 @@ function field() {
 issue=$(echo -e $(gh issue view ${ISSUE_URL} --json body | cut -d\" -f4))
 
 desktop=$(field 1)
-patch=$(field   2)
-name=$(field    3)
+local=$(field   2)
+argumentos=$(field    3)
 
 
 
 script="
 
-#----- Esse trecho adiciona '${argumentos}' ' $(echo ${local} | tr  '[:upper:]' '[:lower:]')' ----#
+#----- Esse trecho adiciona '${argumentos}' $(echo ${local} | tr  '[:upper:]' '[:lower:]') no arquivo ${desktop} ----#
 
 line=\$(cat ${desktop} | grep -n -A 10000 -E '^\[Desktop Entry]|^Exec=' | grep -m1 Exec= | cut -d\: -f1)
 
@@ -28,22 +28,32 @@ command=\$(echo \${command_line} | sed 's|[[:space:]].*||g')
 "
 
 [ "${local}" = "Como primeiro parametro" ] && {
-  script="${script}parameters=\"${argumentos} \${parameters}\"\n\n"
+  script="${script}parameters=\"${argumentos} \${parameters}\"
+  
+"
 } 
 
 [ "${local}" = "Como último parametro" ] && {
-  script="${script}parameters=\"\${parameters} ${argumentos}\"\n\n"
+  script="${script}parameters=\"\${parameters} ${argumentos}\"
+  
+"
 }
 
 [ "${local}" = "Antes do comando" ] && {
-  script="${script}command=\"${argumentos} \${command}\"\n\n"
+  script="${script}command=\"${argumentos} \${command}\"
+  
+"
 }
 
 
-script="${script}sed -i \"\${line}s/^Exec=/Exec=${command} ${parameters}/g\" \${desktop}"
+script="${script}sed -i \"\${line}s|^Exec=|Exec=\${command} \${parameters}|g\" ${desktop}
+
+#----- Fim do trecho relacionado ao arquivo ${desktop} ----#
+
+"
 
 
 
-echo -e "@daigoasuka sugestão para $(echo ${patch} | tr  '[:upper:]' '[:lower:]') para o arquivo \`${desktop}\`, esse é o código:\n\n"'```'"bash\n${script}\n"'```'  > commit.md
+echo -e "@daigoasuka sugestão para adicionar \`${argumentos}\` $(echo ${local} | tr  '[:upper:]' '[:lower:]') no \`${desktop}\`, esse é o código:\n\n"'```'"bash\n${script}\n"'```'  > commit.md
 
 gh issue comment "${ISSUE_URL}" --body-file commit.md
