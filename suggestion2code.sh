@@ -12,21 +12,37 @@ desktop=$(field 1)
 patch=$(field   2)
 name=$(field    3)
 
-[ "${patch}" = "Usar o nome genérico como nome" ] && {
-  script="launchers_to_swap+=(\"${desktop}\")"
+
+
+script="
+
+#----- Esse trecho adiciona ' $(echo ${local} | tr  '[:upper:]' '[:lower:]')' ----#
+
+line=\$(cat \${desktop} | grep -n -A 10000 -E '^\[Desktop Entry]|^Exec=' | grep -m1 Exec= | cut -d\: -f1)
+
+command_line=\$(sed -n \${line}p \${desktop}  | cut -c 6- | sed 's/^[[:blank:]]*//;s/[[:blank:]]*$//')
+
+parameters=\$(echo \${command_line} | sed 's/[^ ]* //')
+command=\$(echo \${command_line} | sed 's|[[:space:]].*||g')
+
+"
+
+[ "${local}" = "No inicio" ] && {
+  script="${script}parameters=\"${argumentos} \${parameters}\"\n\n"
+} 
+
+[ "${local}" = "No final" ] && {
+  script="${script}parameters=\"\${parameters} ${argumentos}\"\n\n"
 }
 
-[ "${patch}" = "Ocultar um aplicativo" ] && {
-  script="launchers_to_hide+=(\"${desktop}\")"
+[ "${local}" = "Antes do comando" ] && {
+  script="${script}command=\"${argumentos} \${command}\"\n\n"
 }
 
-[ "${patch}" = "Definir um nome manualmente" ] && {
-  script="sed \"/^Name\[/d;s|^Name=.*|Name=${name}|g\" ${desktop}"
-}
 
-[ "${patch}" = "Retirar o aplicativo do painel de controle" ] && {
-  script="launchers_to_reset+=(\"${desktop}\")"
-}
+script="${script}sed -i \"\${line}s/^Exec=/Exec=${command} ${parameters}/g\" \${desktop}"
+
+
 
 echo -e "@daigoasuka sugestão para $(echo ${patch} | tr  '[:upper:]' '[:lower:]') para o arquivo \`${desktop}\`, esse é o código:\n\n"'```'"bash\n${script}\n"'```'  > commit.md
 
