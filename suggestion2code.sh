@@ -27,11 +27,11 @@ command=\$(echo \${command_line} | sed 's|[[:space:]].*||g')
 
 "
 
-[ "${local}" = "No inicio" ] && {
+[ "${local}" = "Como primeiro parametro" ] && {
   script="${script}parameters=\"${argumentos} \${parameters}\"\n\n"
 } 
 
-[ "${local}" = "No final" ] && {
+[ "${local}" = "Como último parametro" ] && {
   script="${script}parameters=\"\${parameters} ${argumentos}\"\n\n"
 }
 
