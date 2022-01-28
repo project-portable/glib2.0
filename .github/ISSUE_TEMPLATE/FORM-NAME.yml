@@ -28,7 +28,7 @@ body:
     id: new_name
     attributes:
       label: Quais os novos parametros?
-      description: "Aqui você adiciona os novos parâmentros, caso utilize o caractere `|` lembre-se de adicionar um `\` antes ficando assim: `\|`"
+      description: "Aqui você adiciona os novos parâmentros, caso utilize o caractere `|` lembre-se de adicionar um `\\` antes ficando assim: `\\|`"
       placeholder: ""
     validations:
       required: true
