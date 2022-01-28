@@ -9,7 +9,7 @@ body:
     id: _
     attributes:
       label: Qual o arquivo .desktop responsável pelo aplicativo?
-      description: Esse é o arquivo responsável por iniciar o aplicativo ele fica localizado um `/usr/share/applications/` ou em `/usr/share/tiger/xfce-config/applications/` (caso escolha `Exibir um aplicativo que foi oculto`)
+      description: Esse é o arquivo responsável por iniciar o aplicativo, ele fica localizado em `/usr/share/applications/`
       placeholder: "org.kde.kwrite.desktop"
     validations:
       required: true
@@ -30,6 +30,9 @@ body:
         - Sistema
     validations:
       required: true
+  - type: dropdown
+    id: type
+    attributes:
       label:  Qual categoria do painel de controle?
       description: Caso tenha escolhido `Configurações` é necessário escolher uma categoria do `Painel de Controle` caso contrário o aplicativo ficará oculto, caso queira manter na categoria `Configurações` [envie outra issue soicitando a reexibição](https://github.com/Tiger-OperatingSystem/simplifica-xfce/issues/new?assignees=&labels=Sugest%C3%A3o&template=FORM-NAME.yml&title=Reexibir+o+aplicativo&type=1)
       options:
