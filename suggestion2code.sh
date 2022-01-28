@@ -16,11 +16,11 @@ name=$(field    3)
 
 script="
 
-#----- Esse trecho adiciona ' $(echo ${local} | tr  '[:upper:]' '[:lower:]')' ----#
+#----- Esse trecho adiciona '${argumentos}' ' $(echo ${local} | tr  '[:upper:]' '[:lower:]')' ----#
 
-line=\$(cat \${desktop} | grep -n -A 10000 -E '^\[Desktop Entry]|^Exec=' | grep -m1 Exec= | cut -d\: -f1)
+line=\$(cat ${desktop} | grep -n -A 10000 -E '^\[Desktop Entry]|^Exec=' | grep -m1 Exec= | cut -d\: -f1)
 
-command_line=\$(sed -n \${line}p \${desktop}  | cut -c 6- | sed 's/^[[:blank:]]*//;s/[[:blank:]]*$//')
+command_line=\$(sed -n \${line}p ${desktop}  | cut -c 6- | sed 's/^[[:blank:]]*//;s/[[:blank:]]*$//')
 
 parameters=\$(echo \${command_line} | sed 's/[^ ]* //')
 command=\$(echo \${command_line} | sed 's|[[:space:]].*||g')
