@@ -17,7 +17,7 @@ body:
     id: type
     attributes:
       label: Onde os parametros extras devem ser adicionados?
-      description: Diga o que você quer fazer com o aplicativo
+      description: Você pode especificar onde os parámetros devem ser adicionados, como primeiro parâmetro irá ser adicionado logo após o comando, ao final será adicionado como último parâmetro e antes como um envólucro, use essa opção somente como último recurso
       options:
         - Como primeiro parametro
         - Como último parametro
@@ -27,11 +27,20 @@ body:
   - type: input
     id: new_name
     attributes:
-      label: Qual o novo nome
-      description: "Caso tenha escolhido `Definir um nome manualmente` digite o nome sugerido no campo abaixo"
-      placeholder: "Editor de textos"
+      label: Quais os novos parametros?
+      description: "Aqui você adiciona os novos parâmentros, caso utilize o caractere `|` lembre-se de adicionar um `\` antes ficando assim: `\|`"
+      placeholder: ""
     validations:
-      required: false
+      required: true
+  - type: textarea
+    id: Justificativa
+    attributes:
+      label: Justificativa
+      description: Esse tipo de sugestão tem o potencial de abrir brechas de segurança, então precisamos saber o motivo de você sugerir isso para comparar com os resultados e poder analisar o risco x benefício
+      placeholder: "Por que quer sugerir isso?"
+      value: "Quero sugerir isso porque..."
+    validations:
+      required: true
   - type: checkboxes
     id: terms
     attributes:
